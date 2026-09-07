@@ -1,0 +1,64 @@
+/* ============================================================
+   VARIABLES DE DESIGN — reprises telles quelles du prototype HTML.
+   Toucher ce fichier changera l'apparence de TOUTE la série d'un coup.
+   ============================================================ */
+:root {
+  --void: #0B0E12;
+  --panel: #151A1F;
+  --grid-line: rgba(140, 170, 180, 0.14);
+  --orange: #FC3D21;
+  --blue: #5C93B0;
+  --red: #C13B2E;
+  --paper: #E9EEEC;
+  --paper-doc: #F1EBD9;
+  --ink: #1B2124;
+  --ink-soft: #57676B;
+  --off: #DCE3E2;
+  --off-dim: #8A9498;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Grille technique réutilisable sur tous les bandeaux sombres ---------- */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 50% 45%, black 20%, transparent 72%);
+  pointer-events: none;
+}
+
+/* ---------- Corps de texte standard (module "texte normal") ---------- */
+.doc {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+.doc p {
+  margin-bottom: 1.4rem;
+  max-width: 62ch;
+}

@@ -1,0 +1,45 @@
+{
+  "title": "La guerre avant les étoiles",
+  "seasonLabel": "SAISON 1 — 1945–1957",
+  "blocks": [
+    {
+      "type": "text",
+      "paragraphs": [
+        { "value": "La guerre est terminée. Après un conflit long de six ans qui aura vu s'affronter une grande partie des Etats de la planète et entraîné près de treize millions de morts, le troisième Reich d'Adolf Hitler est vaincu et avec lui les puissances de l'Axe. Le monde peut désormais profiter d'une tranquillité totale, occupé qu'il est à panser ses plaies béantes." },
+        { "value": "Dans un monde idéal, l'histoire s'arrêterait là. Mais l'Histoire avec un grand H est capricieuse. Et à peine la Seconde Guerre mondiale achevée, tous les regards se portent désormais sur un autre affrontement à venir." },
+        { "value": "Car avant d'être une course vers les étoiles, la conquête spatiale trouve une genèse plus terre-à-terre. Une histoire qui commence dans les souterrains épouvantables du camp de concentration de Dora, au cœur de l'Allemagne." },
+        { "value": "**Là où se cache une arme révolutionnaire, mise au point par les Nazis.**" }
+      ]
+    },
+    {
+      "type": "photo",
+      "title": "Le V2",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Bundesarchiv_Bild_146-1978-Anh.026-01%2C_Peenem%C3%BCnde%2C_V2_beim_Start.jpg",
+      "alt": "Peenemünde, un V2 au moment du décollage",
+      "caption": "Bundesarchiv, Bild 146-1978-Anh.026-01 — CC BY-SA 3.0 de"
+    },
+    {
+      "type": "moduleTitle",
+      "title": "Le V2"
+    },
+    {
+      "type": "ficheTechnique",
+      "accent": "blue",
+      "alt": "Schéma du V2",
+      "steps": [
+        { "title": "Un vieux rêve de militaires", "text": "Le missile V2 représente une avancée notable dans le champ militaire car il permet de bombarder des villes plus éloignées que ce qu'il était possible d'atteindre jusque-là." },
+        { "title": "Une arme massive et révolutionnaire…", "text": "Le V2 allemand pesait 13 tonnes pour une charge explosive de 800 kilos et une distance possible de 300 kilomètres." },
+        { "title": "… mais au bilan limité", "text": "Malgré son caractère novateur, le V2 a finalement fait peu de victimes pendant la guerre." },
+        { "title": "Une arme psychologique", "text": "Quasiment impossible à arrêter, le missile arrive à une vitesse supérieure à celle du son, donc dans un silence total." }
+      ]
+    },
+    {
+      "type": "bonus",
+      "title": "Dans l'enfer du camp de concentration",
+      "paragraphs": [
+        { "value": "Les installations de recherche et de construction du V2 ont d'abord été mises en place à Peenemünde, sur une île au nord de l'Allemagne. Mais face au risque de bombardement, l'armée allemande décide de déménager l'ensemble des infrastructures au centre du pays, près de la ville de Nordhausen." },
+        { "value": "Là, les nazis créent un camp de concentration, dépendance du tristement célèbre camp de Buchenwald. Au total, près de 6000 prisonniers mourront dans ces tunnels." }
+      ]
+    }
+  ]
+}
