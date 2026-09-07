@@ -1,0 +1,89 @@
+backend:
+  name: github
+  repo: VOTRE-COMPTE/VOTRE-DEPOT # À remplacer par le vôtre, ex. "robin123/histoires-en-serie"
+  branch: main
+  base_url: https://VOTRE-SITE.vercel.app # À remplacer par votre lien Vercel
+  auth_endpoint: api/auth
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "saisons"
+    label: "Saisons"
+    folder: "content/saisons"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Titre de la saison", name: "title", widget: "string" }
+      - { label: "Repère (ex. SAISON 1 — 1945–1957)", name: "seasonLabel", widget: "string" }
+      - label: "Blocs de contenu (dans l'ordre d'apparition)"
+        name: "blocks"
+        widget: "list"
+        types:
+          - label: "Texte normal"
+            name: "text"
+            widget: "object"
+            summary: "Texte : {{fields.preview}}"
+            fields:
+              - { label: "Aperçu (pour s'y retrouver dans la liste)", name: "preview", widget: "string", required: false }
+              - label: "Paragraphes"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraphe", name: "value", widget: "text" }
+
+          - label: "Titre de module"
+            name: "moduleTitle"
+            widget: "object"
+            summary: "Titre de module : {{fields.title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+
+          - label: "Photo"
+            name: "photo"
+            widget: "object"
+            summary: "Photo : {{fields.title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Lien externe de l'image (si pas d'upload)", name: "imageUrl", widget: "string", required: false }
+              - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
+              - { label: "Légende / crédit", name: "caption", widget: "string", required: false }
+              - { label: "ID vidéo YouTube (si vidéo à la place d'une photo)", name: "youtubeId", widget: "string", required: false }
+              - { label: "Bandeau sans titre (vidéo d'intro)", name: "noTitle", widget: "boolean", default: false }
+
+          - label: "Bonus"
+            name: "bonus"
+            widget: "object"
+            summary: "Bonus : {{fields.title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Lien externe de l'image (si pas d'upload)", name: "imageUrl", widget: "string", required: false }
+              - { label: "Légende / crédit", name: "caption", widget: "string", required: false }
+              - label: "Paragraphes"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraphe", name: "value", widget: "text" }
+
+          - label: "Fiche technique (scroll photo gauche)"
+            name: "ficheTechnique"
+            widget: "object"
+            summary: "Fiche technique"
+            fields:
+              - { label: "Image / schéma", name: "image", widget: "image", required: false }
+              - { label: "Lien externe de l'image (si pas d'upload)", name: "imageUrl", widget: "string", required: false }
+              - { label: "Texte alternatif", name: "alt", widget: "string", required: false }
+              - label: "Couleur du camp"
+                name: "accent"
+                widget: "select"
+                options: ["blue", "red"]
+                default: "blue"
+              - label: "Étapes"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - { label: "Titre de l'étape", name: "title", widget: "string" }
+                  - { label: "Texte", name: "text", widget: "text" }
