@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Histoiresenserie/Histoiresenserie 
+  repo: histoiresenserie/histoiresenserie 
   branch: main
   base_url: https://histoiresenserie.vercel.app/
   auth_endpoint: api/auth
