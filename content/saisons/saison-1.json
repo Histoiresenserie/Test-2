@@ -1,6 +1,9 @@
 {
   "title": "La guerre avant les étoiles",
   "seasonLabel": "SAISON 1 — 1945–1957",
+  "summary": "Des ruines du Troisième Reich à la conquête de l'espace : comment la course aux étoiles est née dans l'ombre de la Seconde Guerre mondiale.",
+  "seasonsCount": 1,
+  "years": "1945–1957",
   "blocks": [
     {
       "type": "text",

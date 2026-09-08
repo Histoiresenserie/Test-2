@@ -1,0 +1,16 @@
+{
+  "title": "L'âge d'or des pirates",
+  "seasonLabel": "SAISON 2",
+  "coverImage": "/covers/pirates.jpg",
+  "summary": "Des Caraïbes à Madagascar, un siècle de flibuste a bouleversé l'équilibre des puissances en mer. Mutins, corsaires et capitaines hors-la-loi réécrivent les règles du pouvoir.",
+  "seasonsCount": 1,
+  "years": "1650–1730",
+  "blocks": [
+    {
+      "type": "text",
+      "paragraphs": [
+        { "value": "À venir." }
+      ]
+    }
+  ]
+}

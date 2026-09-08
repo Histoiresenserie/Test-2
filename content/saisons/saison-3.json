@@ -1,0 +1,16 @@
+{
+  "title": "Riders on a storm",
+  "seasonLabel": "SAISON 3",
+  "coverImage": "/covers/the-doors.jpg",
+  "summary": "Los Angeles, 1965. Jim Morrison et les Doors électrisent la scène rock naissante et bousculent l'Amérique des sixties, entre poésie, excès et scandale.",
+  "seasonsCount": 1,
+  "years": "1965–1971",
+  "blocks": [
+    {
+      "type": "text",
+      "paragraphs": [
+        { "value": "À venir." }
+      ]
+    }
+  ]
+}

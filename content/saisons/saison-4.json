@@ -1,0 +1,16 @@
+{
+  "title": "Heureux qui comme Ulysse",
+  "seasonLabel": "SAISON 4",
+  "coverImage": "/covers/odyssee.jpg",
+  "summary": "Le retour d'Ulysse, entre mythe fondateur et miroir de la Grèce antique : dix ans d'errance à travers monstres, dieux jaloux et tempêtes.",
+  "seasonsCount": 1,
+  "years": "Vers 1200 av. J.-C.",
+  "blocks": [
+    {
+      "type": "text",
+      "paragraphs": [
+        { "value": "À venir." }
+      ]
+    }
+  ]
+}

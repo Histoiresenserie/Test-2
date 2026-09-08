@@ -1,0 +1,239 @@
+.carousel {
+  --card-w: min(62vw, 260px);
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px calc(50vw - (var(--card-w) / 2)) 12px 16px;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselCard {
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--card-w);
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  border: 2px solid var(--brand-ink);
+  box-shadow: 3px 3px 0 var(--brand-ink);
+  overflow: hidden;
+  scroll-snap-align: center;
+  text-decoration: none;
+  background: var(--brand-yellow);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.15s ease;
+}
+
+/* La première carte reste calée à gauche (avec le bord de page qui dépasse) ;
+   à partir de la deuxième, chaque carte se centre à l'arrêt du scroll. */
+.carouselCard:first-child {
+  scroll-snap-align: start;
+}
+
+.carouselCard.unfocused {
+  opacity: 0.45;
+  transform: scale(0.94);
+}
+
+.carouselCardMedia {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.carouselCardMedia[data-fallback='magenta'] {
+  background-color: var(--brand-magenta);
+}
+
+.carouselCardMedia[data-fallback='yellow'] {
+  background-color: var(--brand-yellow);
+}
+
+.carouselCardScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23, 19, 14, 0) 40%, rgba(23, 19, 14, 0.85) 100%);
+}
+
+.carouselCardContent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px;
+}
+
+.cardLabel {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.015em;
+  line-height: 0.86;
+  color: var(--brand-ink);
+  background: var(--brand-yellow);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.overlayLabel {
+  font-size: 14px;
+  padding: 6px 14px;
+}
+
+.carouselCardTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.015em;
+  line-height: 0.92;
+  font-size: 19px;
+  color: var(--brand-cream);
+}
+
+.summaryMeta {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.015em;
+  line-height: 0.86;
+  font-size: 11px;
+  color: var(--brand-ink);
+  background: var(--brand-yellow);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+/* ---------- Aperçu centré (1er tap sur une carte) ---------- */
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlayPopIn {
+  from { opacity: 0; transform: scale(0.92) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.overlayBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(23, 19, 14, 0.78);
+  animation: overlayFadeIn 0.18s ease;
+}
+
+.overlayCard {
+  width: 100%;
+  max-width: 420px;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 18px;
+  border: 2px solid var(--brand-ink);
+  box-shadow: 6px 6px 0 var(--brand-ink);
+  background: var(--brand-cream);
+  animation: overlayPopIn 0.2s ease;
+}
+
+.overlayMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.overlayClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid var(--brand-ink);
+  background: var(--brand-cream);
+  color: var(--brand-ink);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlayContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+
+.overlayTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.015em;
+  line-height: 0.92;
+  font-size: 30px;
+  color: var(--brand-ink);
+  margin: 0;
+}
+
+.overlaySummary {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--brand-ink);
+  margin: 0;
+}
+
+.overlayFooter {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.overlayCta {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.015em;
+  line-height: 0.86;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--brand-cream);
+  background: var(--brand-magenta);
+  border: 2px solid var(--brand-ink);
+  box-shadow: 2px 2px 0 var(--brand-ink);
+  border-radius: 999px;
+  padding: 10px 18px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .carouselCard:hover {
+    box-shadow: 4px 4px 0 var(--brand-ink);
+  }
+}
+
+@media (min-width: 640px) {
+  .carousel {
+    --card-w: min(42vw, 320px);
+    padding: 4px calc(50vw - (var(--card-w) / 2)) 12px 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+    --card-w: min(24vw, 340px);
+  }
+}

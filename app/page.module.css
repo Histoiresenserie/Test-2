@@ -1,0 +1,272 @@
+/* ---------- Écran d'accueil (hero + CTA, sous le header fixe) ---------- */
+.screen {
+  min-height: calc(100svh - var(--header-h, 60px));
+  padding-top: var(--header-h, 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Bandeau du haut (fixe, se cache au scroll vers le bas) ---------- */
+.siteHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--brand-cream);
+  border-bottom: 2px solid var(--brand-ink);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  transition: transform 0.25s ease;
+}
+
+.siteHeaderHidden {
+  transform: translateY(-100%);
+}
+
+.headerSpacer {
+  flex: 1;
+}
+
+.menuButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menuButton span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--brand-ink);
+}
+
+.headerLogo {
+  height: 20px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.btnSupport,
+.btnSignup {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.015em;
+  line-height: 0.86;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--brand-ink);
+  box-shadow: 2px 2px 0 var(--brand-ink);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btnSupport {
+  background: var(--brand-magenta);
+  color: var(--brand-cream);
+}
+
+.btnSupport:hover {
+  background: var(--brand-magenta-soft);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--brand-ink);
+}
+
+.btnSignup {
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+}
+
+.btnSignup:hover {
+  background: var(--brand-yellow-soft);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--brand-ink);
+}
+
+/* ---------- Hero (accueil du site) ---------- */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--brand-yellow);
+}
+
+.heroCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 26px;
+  padding: 90px 24px 40px;
+  background: var(--brand-cream);
+}
+
+.mainLogo {
+  width: 76vw;
+  max-width: 400px;
+  height: auto;
+}
+
+.heroDivider {
+  width: 48px;
+  height: 5px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--brand-magenta) 50%, var(--brand-yellow) 50%);
+}
+
+.intro {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--brand-ink);
+  font-size: 19px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.dash {
+  color: var(--brand-magenta);
+}
+
+/* ---------- Bloc CTA ---------- */
+.ctaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 16px 32px;
+  background: var(--brand-cream);
+}
+
+.btnPrimary,
+.btnSecondary {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.015em;
+  line-height: 0.86;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 999px;
+  border: 2px solid var(--brand-ink);
+  box-shadow: 3px 3px 0 var(--brand-ink);
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btnPrimary {
+  background: var(--brand-magenta);
+  color: var(--brand-cream);
+}
+
+.btnPrimary:hover {
+  background: var(--brand-magenta-soft);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--brand-ink);
+}
+
+.btnSecondary {
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+}
+
+.btnSecondary:hover {
+  background: var(--brand-yellow-soft);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--brand-ink);
+}
+
+/* ---------- Les dernières séries (carrousel horizontal) ---------- */
+.latestSection {
+  background: var(--brand-cream);
+  padding: 2.75rem 0 3.5rem;
+  overflow: hidden;
+}
+
+/* Sépare les rangées entre elles (mais pas avant la toute première). */
+.latestSection + .latestSection {
+  border-top: 2px solid rgba(23, 19, 14, 0.12);
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  margin-bottom: 1.1rem;
+}
+
+.sectionTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.015em;
+  line-height: 0.86;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: var(--brand-ink);
+  margin: 0;
+}
+
+.sectionScrollHint {
+  position: relative;
+  width: 34px;
+  height: 2px;
+  flex: 0 0 auto;
+  background: var(--brand-magenta);
+}
+
+.sectionScrollHint::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid var(--brand-magenta);
+  border-right: 2px solid var(--brand-magenta);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+@media (min-width: 640px) {
+  .sectionHeading {
+    padding: 0 2rem;
+  }
+  .sectionTitle {
+    font-size: 28px;
+  }
+  .sectionScrollHint {
+    width: 48px;
+  }
+}
+
+/* ---------- Adaptation tablette / ordinateur ---------- */
+@media (min-width: 640px) {
+  .ctaBlock {
+    flex-direction: row;
+  }
+  .btnPrimary,
+  .btnSecondary {
+    flex: 1;
+  }
+  .mainLogo {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .latestSection {
+    padding: 3.5rem 0 4.5rem;
+  }
+}

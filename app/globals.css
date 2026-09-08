@@ -15,6 +15,14 @@
   --ink-soft: #57676B;
   --off: #DCE3E2;
   --off-dim: #8A9498;
+
+  /* ---------- Charte "pop" (page d'accueil) ---------- */
+  --brand-cream: #FBF5E9;
+  --brand-ink: #17130E;
+  --brand-yellow: oklch(0.88 0.19 96);
+  --brand-yellow-soft: oklch(0.90 0.19 96);
+  --brand-magenta: oklch(0.60 0.29 2);
+  --brand-magenta-soft: oklch(0.68 0.28 2);
 }
 
 * {
